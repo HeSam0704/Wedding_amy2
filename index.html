@@ -518,30 +518,7 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-	.info-cover {
-    position: relative;
-    height: 70vw !important;     /* 固定高度，!important 強制覆蓋 */
-    overflow: hidden !important;
-  }
-  .info-cover img {
-    width: 100% !important;
-    height: 100% !important;     /* 撐滿父容器 */
-    object-fit: cover !important;
-    object-position: center top !important;
-  }
-  .info-cover::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 40%;                 /* 從 60% 開始柔邊到 100% */
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(--bg) 100%
-    );
-    pointer-events: none;
-    z-index: 1;
-  }
+
   .info-card-title {
     margin: -32px -24px 28px;
     padding: 18px 24px;
@@ -690,6 +667,19 @@
 
     /* ── MOBILE ── */
     @media (max-width: 700px) {
+		#hero {
+  min-height: 70vh !important;    /* 只顯示 70% 螢幕高度 */
+  max-height: 70vh !important;
+  overflow: hidden !important;
+}
+#hero::after {
+  height: 40% !important;         /* 柔邊佔照片下方 40% */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,               /* 50% 處透明開始 */
+    var(--bg) 100%                /* 70% 處完全消失 */
+  ) !important;
+}	
       #navbar { padding: 0 20px; }
       .nav-links {
         display: none; flex-direction: column;
