@@ -600,21 +600,6 @@
   .nav-links.open { display: flex; }
   .hamburger { display: flex; }
 
-  /* HERO 封面裁切＋柔邊 */
-  #hero {
-    min-height: 70vh !important;
-    max-height: 70vh !important;
-    overflow: hidden !important;
-  }
-  #hero::after {
-    height: 40% !important;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(--bg) 100%
-    ) !important;
-  }
-
   /* INFO 左右改上下 */
   .info-wrap { grid-template-columns: 1fr; }
   .info-cover { position: static; }
