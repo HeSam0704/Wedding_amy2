@@ -1146,6 +1146,24 @@ function toggleAccordion(btn) {
   body.classList.toggle('open');
 }
 
+// 自動調整 Google 表單 iframe 高度
+function autoResizeGform() {
+  const iframe = document.querySelector('.gform-wrap iframe');
+  if (!iframe) return;
+
+  const w = window.innerWidth;
+  if (w <= 480) {
+    iframe.style.height = '2200px';
+  } else if (w <= 768) {
+    iframe.style.height = '1800px';
+  } else {
+    iframe.style.height = '1500px';
+  }
+}
+
+autoResizeGform();
+window.addEventListener('resize', autoResizeGform);
+
 
 </script>
 </body>
